@@ -71,7 +71,7 @@ function openFromList(list_promise, tmp_dir_prefix) {
 function getGistDetails(doc = (vscode.window.activeTextEditor ? vscode.window.activeTextEditor.document : undefined)) {
   if (!doc) { return undefined }
   let sep = path.sep;
-  let regexp = new RegExp(".*vscode_gist_([^_]*)_[^" + sep + "]*" + sep + "(.*)");
+  let regexp = new RegExp(".*vscode_gist_([^_]*)_[^\\" + sep + "]*\\" + sep + "(.*)");
   let matches = doc.fileName.match(regexp);
   if (matches) {
     return {
